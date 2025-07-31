@@ -8,6 +8,7 @@
     --card-bg: #282828; /* Background card gelap */
     --border-color: #444; /* Warna border */
     --accent-color: #00bcd4; /* Warna aksen (biru kehijauan) */
+    --navbarcolor: rgb(90, 106, 225); /* Warna navbar */
 }
 
 /* Base Styles */
@@ -23,6 +24,8 @@ body {
     color: var(--text-color-dark);
     background-color: var(--bg-light);
     scroll-behavior: smooth;
+    /* Prevent horizontal scroll if overflow happens, but be careful with this on responsive designs */
+    overflow-x: hidden; 
 }
 
 .container {
@@ -47,19 +50,20 @@ ul {
 
 h1, h2, h3 {
     color: var(--text-color-dark);
-    margin-bottom: 20px;
+    /* Reduced default margin-bottom for better control */
+    margin-bottom: 15px; 
 }
 
 /* Navbar */
 .navbar {
-    background-color: var(--bg-dark);
+    background-color: var(--navbarcolor);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(4, 157, 209, 0.5);
 }
 
 .navbar .container {
@@ -121,18 +125,20 @@ h1, h2, h3 {
 
 /* Sections */
 .section {
-    padding: 80px 0;
+    /* Slightly reduced padding, can be adjusted */
+    padding: 60px 0; 
     text-align: center;
     border-bottom: 1px solid var(--border-color);
 }
 
-.section:last-child {
+.section:last-of-type { /* Changed to last-of-type for more specific targeting */
     border-bottom: none;
 }
 
 .section h2 {
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    /* Adjusted margin-bottom for tighter spacing under heading */
+    margin-bottom: 30px; 
     position: relative;
     display: inline-block;
     color: var(--primary-blue);
@@ -146,7 +152,7 @@ h1, h2, h3 {
     background-color: var(--accent-color);
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10px;
+    bottom: -10px; /* Kept this as it creates a nice underline effect */
 }
 
 .dark-section {
@@ -170,7 +176,7 @@ h1, h2, h3 {
 .hero-section {
     background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-blue) 100%);
     color: var(--text-color-light);
-    padding: 120px 0;
+    padding: 100px 0; /* Slightly reduced padding */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,7 +196,7 @@ h1, h2, h3 {
 
 .hero-text h1 {
     font-size: 3.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced */
     color: var(--text-color-light);
 }
 
@@ -200,13 +206,13 @@ h1, h2, h3 {
 
 .hero-text .tagline {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced */
     color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* Reduced */
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -264,9 +270,13 @@ h1, h2, h3 {
     position: relative;
     background-color: #fff;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Slightly increased margin between items */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0; /* Remove margin from last item to prevent extra space */
 }
 
 .timeline-item::before {
@@ -307,7 +317,7 @@ h1, h2, h3 {
 .timeline-item .period {
     font-style: italic;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Reduced */
 }
 
 .timeline-item .degree {
@@ -320,8 +330,8 @@ h1, h2, h3 {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px; /* Slightly reduced gap */
+    margin-top: 30px; /* Reduced */
     text-align: left;
 }
 
@@ -335,7 +345,7 @@ h1, h2, h3 {
 
 .skill-category h3 {
     color: var(--accent-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced */
     font-size: 1.5rem;
 }
 
@@ -367,8 +377,8 @@ h1, h2, h3 {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px; /* Slightly reduced gap */
+    margin-top: 30px; /* Reduced */
 }
 
 .project-card {
@@ -390,13 +400,13 @@ h1, h2, h3 {
 
 .project-card h3 {
     color: var(--dark-blue);
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced */
     font-size: 1.6rem;
 }
 
 .project-card p {
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced */
     flex-grow: 1; /* Pushes link to bottom */
 }
 
@@ -416,103 +426,126 @@ h1, h2, h3 {
 }
 
 /* Contact */
+.contact-container {
+    padding-bottom: 40px; /* Ensure sufficient padding at the bottom of the contact section */
+}
+
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px; /* Slightly reduced gap */
+    margin-top: 25px; /* Reduced */
 }
 
 /* Card style */
 .contact-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--card-bg);
-  border: 2px solid var(--accent-color);
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
 }
 
 .contact-img-wrapper {
-  width: 100%;
-  max-width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 10px;
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .contact-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 .contact-label {
-  color: var(--text-color-light);
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-top: 5px;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 5px;
 }
-
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-blue) 100%);
-  color: var(--text-color-light);
-  padding: 30px 0;
-  font-size: 0.95rem;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-blue) 100%);
+    color: var(--text-color-light);
+    padding: 30px 0;
+    font-size: 0.95rem;
 }
 
 .footer-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-tagline {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-email a {
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-email a:hover {
-  color: var(--primary-blue);
+    color: var(--primary-blue);
 }
 
 .footer-socials {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px; /* Added margin for separation */
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--accent-color);
 }
 
 .footer-socials a img {
-  width: 24px;
-  height: 24px;
-  filter: invert(100%) brightness(100%);
-  transition: transform 0.3s ease, filter 0.3s ease;
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .footer-socials a:hover img {
-  transform: translateY(-3px);
-  filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(180deg);
+    transform: translateY(-3px);
+    filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(180deg);
 }
 
 .footer-copy {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Responsive Design */
@@ -557,6 +590,7 @@ footer {
     .hero-section .content {
         flex-direction: column;
         text-align: center;
+        gap: 30px; /* Adjusted gap for smaller screens */
     }
 
     .hero-image {
@@ -564,33 +598,47 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem; /* Adjusted font size for better fit */
     }
 
     .hero-text .tagline {
-        font-size: 1.3rem;
+        font-size: 1.2rem; /* Adjusted font size */
     }
 
+    /* Timeline specific adjustments for mobile */
     .timeline::before {
         left: 20px;
     }
 
     .timeline-item {
         margin-left: 0;
-        transform: none !important;
+        /* Important: Resetting these properties to ensure they don't interfere with mobile layout */
+        transform: none !important; 
         left: 0 !important;
         padding: 20px;
         text-align: left !important;
     }
 
     .timeline-item::before {
-        left: 0;
-        transform: translateX(-50%) !important;
+        left: 20px; /* Align dot to the left timeline line */
+        transform: translateX(-50%) !important; 
+        right: auto !important; /* Ensure right is not set */
     }
 
+    /* No need for separate even/odd rules on mobile timeline if all aligned left */
     .timeline-item:nth-child(even)::before {
+        /* This rule can be removed or simplified if the above global rule covers it */
+        /* It's good to be explicit for clarity if it's strictly needed */
+        left: 20px; 
         right: auto;
-        left: 0;
+    }
+
+    .skills-grid, .project-grid, .contact-grid {
+        gap: 20px; /* Consistent smaller gap for grids */
+    }
+
+    .skill-category, .project-card, .contact-card {
+        padding: 20px; /* Slightly reduced padding for cards on smaller screens */
     }
 }
 
