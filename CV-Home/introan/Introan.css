@@ -33,7 +33,7 @@ body {
   overflow: hidden;
   display: inline-block;
   width: 0;
-  animation: typing 2s steps(10) forwards, blink 0.3s infinite;
+  animation: typing 2s steps(10) forwards, blink 0.7s infinite;
 }
 
 .highlight {
