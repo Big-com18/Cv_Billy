@@ -11,6 +11,53 @@
     --navbarcolor: rgb(90, 106, 225); /* Warna navbar */
 }
 
+
+/* Gaya untuk Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark); /* Atau warna lain yang Anda suka */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan overlay berada di atas semua elemen lain */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.intro-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    text-align: center;
+    color: var(--text-color-light);
+    animation: fadeInScale 1.5s ease-out;
+}
+
+.intro-content h1 {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    opacity: 0; /* Mulai dari tak terlihat */
+    animation: slideInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.intro-content p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0;
+    opacity: 0; /* Mulai dari tak terlihat */
+    animation: slideInUp 1s forwards;
+    animation-delay: 0.8s;
+}
+
 /* Base Styles */
 * {
     margin: 0;

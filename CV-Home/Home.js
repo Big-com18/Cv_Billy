@@ -53,5 +53,4 @@ window.addEventListener('scroll', () => {
 });
 
 document.getElementsByClassName('project')[0].addEventListener('click', function()){
-
 }
