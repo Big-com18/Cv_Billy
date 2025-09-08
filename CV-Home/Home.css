@@ -590,6 +590,85 @@ h1, h2, h3 {
     flex-grow: 1;
 }
 
+/* ================================== */
+/* Sertifikat Section          */
+/* ================================== */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.certificate-card {
+  background-color: #fff; /* Latar belakang terang, cocok dengan tema section */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1); /* Bayangan yang lebih soft untuk tema terang */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.certificate-image-wrapper {
+  width: 100%;
+  height: 200px; /* Atur tinggi gambar agar seragam */
+  overflow: hidden;
+}
+
+.certificate-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pastikan gambar mengisi area tanpa distorsi */
+  display: block;
+}
+
+.certificate-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-info h3 {
+  color: var(--text-color-dark); /* Warna teks gelap */
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.certificate-info p {
+  color: #666; /* Warna abu-abu untuk deskripsi */
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Mendorong tombol ke bawah */
+}
+
+.view-cert-btn {
+  background-color: var(--primary-blue);
+  color: var(--text-color-light); /* Teks terang di atas tombol biru */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  align-self: flex-start; /* Tombol rata kiri */
+  text-align: center;
+}
+
+.view-cert-btn:hover {
+  background-color: var(--dark-blue);
+  transform: translateY(-3px);
+  color: var(--text-color-light); /* Pastikan warna teks tetap saat hover */
+}
+
 /* Contact */
 .contact-container {
     padding-bottom: 40px; /* Ensure sufficient padding at the bottom of the contact section */
