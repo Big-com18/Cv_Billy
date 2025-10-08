@@ -54,3 +54,12 @@ window.addEventListener('scroll', () => {
 
 document.getElementsByClassName('project')[0].addEventListener('click', function()){
 }
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.9)'; // lebih gelap
+        navbar.style.transition = 'background-color 0.3s ease';
+    } else {
+        navbar.style.backgroundColor = 'var(--navbarcolor)';
+    }
+});
