@@ -2,11 +2,11 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 const navItems = document.querySelectorAll('.nav-links li');
 
+// Toggle navbar saat burger diklik
 burger.addEventListener('click', () => {
-    // Toggle Nav
     navLinks.classList.toggle('nav-active');
 
-    // Animate Links
+    // Animasi tiap link
     navItems.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
@@ -15,31 +15,31 @@ burger.addEventListener('click', () => {
         }
     });
 
-    // Burger Animation
+    // Animasi burger icon
     burger.classList.toggle('toggle');
 });
 
-// Close nav on link click (for mobile)
+// Tutup nav saat link diklik (untuk mobile)
 navLinks.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
         navLinks.classList.remove('nav-active');
         burger.classList.remove('toggle');
-        navItems.forEach(link => {
-            link.style.animation = '';
-        });
+        navItems.forEach(link => (link.style.animation = ''));
     }
 });
 
-// Highlight active link on scroll
+// === Highlight link aktif saat scroll ===
 const sections = document.querySelectorAll('section');
 const navLinksAnchors = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
     let current = '';
+    const scrollPos = window.scrollY + 100; // tambahkan offset sedikit agar lebih akurat
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
@@ -50,16 +50,4 @@ window.addEventListener('scroll', () => {
             a.classList.add('active');
         }
     });
-});
-
-document.getElementsByClassName('project')[0].addEventListener('click', function()){
-}
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.9)'; // lebih gelap
-        navbar.style.transition = 'background-color 0.3s ease';
-    } else {
-        navbar.style.backgroundColor = 'var(--navbarcolor)';
-    }
 });
