@@ -1,4 +1,4 @@
-const animationDuration = 6000;
+const animationDuration = 5000;
 const mainWebsiteURL = '../Home.html';
 
 setTimeout(() => {
