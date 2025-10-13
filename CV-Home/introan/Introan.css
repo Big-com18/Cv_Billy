@@ -1,98 +1,131 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  display: flex; justify-content: center; align-items: center;
+  color: #e0f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+  background: linear-gradient(-45deg, #000814, #001d3d, #003566, #000814);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
 
+/* Container utama */
 .intro-container {
   text-align: center;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  background: rgba(0, 60, 100, 0.15);
   border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.3);
   backdrop-filter: blur(12px);
   animation: fadeIn 1.2s ease forwards;
 }
 
+/* Teks utama */
 .intro-text {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #cfeeff;
   margin-bottom: 25px;
+  letter-spacing: 1px;
   opacity: 0;
   animation: fadeInUp 1s ease forwards 0.3s;
 }
 
+/* Efek teks mengetik */
 .typing-text {
-  border-right: 2px solid #00ffc8;
+  border-right: 3px solid #00b4d8;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   width: 0;
-  animation: typing 2s steps(10) forwards, blink 0.7s infinite;
+  animation: typing 2.5s steps(14) forwards, blink 0.7s infinite;
 }
 
+/* Teks highlight */
 .highlight {
   display: block;
   font-size: 1.6rem;
-  color: #00ffc8;
+  color: #48cae4;
+  text-shadow: 0 0 8px rgba(72, 202, 228, 0.7);
   margin-top: 8px;
   opacity: 0;
   animation: fadeInUp 1s ease forwards 2.1s;
 }
 
+/* Fokus utama */
 .intro-focus {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
 }
 
+/* Item fokus */
 .focus-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 15px;
+  padding: 10px 18px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 70, 130, 0.25);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  backdrop-filter: blur(6px);
   transform: translateY(20px) scale(0.95);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
+/* Animasi masuk */
 .focus-item:nth-child(1) { animation: fadeInUp 0.7s ease forwards 2.5s; }
 .focus-item:nth-child(2) { animation: fadeInUp 0.7s ease forwards 2.8s; }
 .focus-item:nth-child(3) { animation: fadeInUp 0.7s ease forwards 3.1s; }
 .focus-item:nth-child(4) { animation: fadeInUp 0.7s ease forwards 3.3s; }
 
+/* Hover efek */
 .focus-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0,255,200,0.5);
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.6);
 }
 
+/* Ikon fokus */
 .focus-icon {
-  width: 38px; height: 38px; object-fit: contain;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.6));
 }
 
+/* Animasi */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes typing {
   to { width: 100%; }
 }
+
 @keyframes blink {
-  0%, 50% { border-color: #00ffc8; }
+  0%, 50% { border-color: #00b4d8; }
   51%, 100% { border-color: transparent; }
 }
