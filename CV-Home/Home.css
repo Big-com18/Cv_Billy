@@ -839,3 +839,49 @@ footer {
     }
   }
 }
+/* === MOBILE RESPONSIVE FIX === */
+/* Kode ini hanya jalan di layar HP (lebar max 768px) */
+@media screen and (max-width: 768px) {
+
+    /* 1. Perbaiki Bagian Hero (Foto & Teks) */
+    .hero-section .content {
+        flex-direction: column-reverse; /* Ubah posisi: Gambar di atas, Teks di bawah */
+        gap: 30px; /* Beri jarak antara gambar dan teks */
+        text-align: center; /* Teks jadi rata tengah biar rapi */
+        padding-top: 80px; /* Tambah jarak atas biar ga ketutup Navbar */
+    }
+
+    /* 2. Atur Ukuran Gambar Profil di HP */
+    .hero-image {
+        width: 100%; /* Wadah gambar ambil lebar penuh */
+        display: flex;
+        justify-content: center; /* Pastikan gambar di tengah */
+        margin: 0;
+    }
+
+    .hero-image img {
+        width: 200px; /* Perkecil ukuran gambar di HP */
+        height: 200px;
+        border-width: 3px; /* Tipiskan border dikit biar proporsional */
+    }
+
+    /* 3. Atur Ukuran Teks di HP */
+    .hero-text {
+        width: 100%;
+        padding: 0 20px; /* Beri jarak kiri-kanan biar teks ga nempel pinggir layar */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Kecilkan font "Halo, saya..." */
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Sesuaikan ukuran paragraf */
+    }
+
+    /* 4. Perbaiki Navbar agar tidak gepeng */
+    .navbar .container {
+        width: 90%; /* Lebarkan container navbar di HP */
+    }
+}
