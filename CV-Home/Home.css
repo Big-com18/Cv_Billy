@@ -635,10 +635,38 @@ h1, h2, h3 {
     transition: all 0.3s ease;
 }
 
+/* Reset hover default biar tidak tabrakan */
 .contact-card:hover {
-    background: var(--primary-blue);
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+    background: var(--card-bg); /* default, akan di-override per platform */
+}
+
+/* Gmail - Merah */
+.contact-card[data-platform="gmail"]:hover {
+    background: #EA4335;
+    box-shadow: 0 10px 25px rgba(234, 67, 53, 0.5);
+    border-color: #EA4335;
+}
+
+/* LinkedIn - Biru LinkedIn */
+.contact-card[data-platform="linkedin"]:hover {
+    background: linear-gradient(#0A66C2, #f4f4f4);
+    box-shadow: 0 10px 25px rgba(10, 102, 194, 0.5);
+    border-color: #0A66C2;
+}
+
+/* GitHub - Abu gelap */
+.contact-card[data-platform="github"]:hover {
+    background: #333333;
+    box-shadow: 0 10px 25px rgba(51, 51, 51, 0.6);
+    border-color: #555;
+}
+
+/* Instagram - Gradient ungu-pink-oranye */
+.contact-card[data-platform="instagram"]:hover {
+    background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.5);
+    border-color: #E1306C;
 }
 
 .contact-img-wrapper {
@@ -651,7 +679,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: brightness(1) invert(0);
 }
 
 /* === FOOTER === */
