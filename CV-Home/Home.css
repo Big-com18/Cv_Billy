@@ -52,43 +52,33 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-/* === NAVBAR GLASSMORPHISM & CENTERED === */
+/* === NAVBAR GLASSMORPHISM PILL LAYOUT (SEEDS STYLE) === */
 .navbar {
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 1rem 0;
+    background: transparent; /* Latar utama transparan */
+    padding: 20px 0; /* Padding atas bawah */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
+}
+
+/* Jika kamu ingin navbar ada efek saat di-scroll pakai JS, tambahkan class ini via JS */
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 90%;
+    width: 100%;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--text-color-light);
-    letter-spacing: 1px;
-    z-index: 2;
-}
-
-.logo:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--glow-color);
-}
-
-/* Posisi Navbar di Tengah untuk Desktop */
+/* Posisi Navbar Kapsul di Tengah untuk Desktop */
 @media (min-width: 769px) {
     .nav-links {
         display: flex;
@@ -96,10 +86,21 @@ h1, h2, h3 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        /* Styling Bentuk Kapsul/Pill */
+        background: rgba(30, 41, 59, 0.85); /* Warna abu gelap glassmorphism */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 12px 35px;
+        border-radius: 50px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 }
 
 .nav-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara icon dan teks */
     color: var(--text-color-light);
     font-weight: 500;
     font-size: 0.95rem;
@@ -129,6 +130,32 @@ h1, h2, h3 {
 .nav-links li a:hover,
 .nav-links li a.active {
     color: var(--accent-color);
+}
+
+/* Bagian Kanan Navbar (Tombol & Burger) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+    margin-left: auto; /* Memastikan div tombol terdorong penuh ke sebelah kanan */
+}
+
+.btn-action {
+    background-color: transparent;
+    color: var(--text-color-light);
+    padding: 8px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--glow-color);
 }
 
 /* === BURGER MENU === */
@@ -270,6 +297,7 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    display: inline-block;
 }
 
 .btn-primary::before {
@@ -503,6 +531,89 @@ h1, h2, h3 {
     backdrop-filter: blur(4px);
 }
 
+/* === SERTIFIKAT === */
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certificate-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    border-color: var(--accent-color);
+}
+
+.certificate-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.certificate-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-image-wrapper img {
+    transform: scale(1.08); 
+}
+
+.certificate-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-info h3 {
+    font-size: 1.3rem;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.certificate-info p {
+    font-size: 0.95rem;
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.view-cert-btn {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.view-cert-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--glow-color);
+    transform: translateY(-2px);
+}
+
 /* === CONTACT === */
 .contact-grid {
     display: flex;
@@ -543,154 +654,9 @@ h1, h2, h3 {
     filter: brightness(0) invert(1);
 }
 
-/* === RESPONSIVE MOBILE FIX === */
-@media screen and (max-width: 768px) {
-    .navbar .container {
-        width: 100%;
-        padding: 0 20px;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        transform: none; /* Reset desktop centering */
-        flex-direction: column;
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(15px);
-        gap: 0;
-        border-bottom: 1px solid var(--border-color);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: clip-path 0.4s ease-in-out;
-    }
-
-    .nav-links.nav-active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 20px 0;
-        border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .burger { display: flex; }
-
-    .hero-section .content {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 40px;
-    }
-
-    .hero-text h1 { font-size: 2.5rem; }
-    .hero-text { text-align: center; }
-    
-    .hero-image { flex: 0 0 250px; }
-    .hero-image img { height: 250px; }
-
-    .education-timeline::before { left: 20px; }
-    
-    .timeline-item, .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
-        width: 100%;
-        left: 0;
-        padding: 20px 0 20px 50px;
-        text-align: left;
-    }
-
-    .timeline-item::after {
-        left: 12px !important;
-        right: auto !important;
-    }
-}
-/* === SERTIFIKAT === */
-.certificate-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.certificate-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.certificate-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-    border-color: var(--accent-color); /* Efek garis menyala saat disentuh */
-}
-
-.certificate-image-wrapper {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.certificate-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    transition: transform 0.5s ease;
-}
-
-.certificate-card:hover .certificate-image-wrapper img {
-    transform: scale(1.08); /* Zoom halus saat di-hover */
-}
-
-.certificate-info {
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.certificate-info h3 {
-    font-size: 1.3rem;
-    color: var(--text-color-light);
-    margin-bottom: 10px;
-}
-
-.certificate-info p {
-    font-size: 0.95rem;
-    color: var(--text-color-dark);
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-/* Tombol Sertifikat Outline Neon */
-.view-cert-btn {
-    background: transparent;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-}
-
-.view-cert-btn:hover {
-    background: var(--accent-color);
-    color: var(--bg-dark);
-    box-shadow: 0 0 15px var(--glow-color);
-    transform: translateY(-2px);
-}
-
-
 /* === FOOTER === */
 footer {
-    background: #080d1a; /* Background sangat gelap biar kontras */
+    background: #080d1a; 
     border-top: 1px solid var(--border-color);
     padding: 50px 0 20px;
     text-align: center;
@@ -727,19 +693,17 @@ footer {
 
 .footer-socials a:hover {
     color: var(--accent-color);
-    transform: translateY(-5px); /* Ikon loncat dikit pas di-hover */
+    transform: translateY(-5px); 
 }
 
 .footer-socials a img {
     width: 35px;
     height: 35px;
-    /* Ubah gambar jadi putih agak pudar dulu biar nyatu sama dark mode */
     filter: brightness(0) invert(1) opacity(0.6); 
     transition: all 0.3s ease;
 }
 
 .footer-socials a:hover img {
-    /* Munculin warna asli dan bikin efek nyala pas di-hover */
     filter: brightness(1) invert(0) drop-shadow(0 0 10px rgba(255,255,255,0.5));
 }
 
@@ -749,4 +713,69 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
     padding-top: 20px;
     width: 100%;
+}
+
+/* === RESPONSIVE MOBILE FIX === */
+@media screen and (max-width: 768px) {
+    .navbar .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        transform: none; /* Reset desktop centering */
+        flex-direction: column;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(15px);
+        gap: 0;
+        border-bottom: 1px solid var(--border-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+    }
+
+    .nav-links.nav-active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn-action {
+        display: none; /* Sembunyikan tombol 'Hubungi' di mobile supaya tidak tabrakan dengan burger menu */
+    }
+
+    .burger { display: flex; }
+
+    .hero-section .content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text { text-align: center; }
+    
+    .hero-image { flex: 0 0 250px; }
+    .hero-image img { height: 250px; }
+
+    .education-timeline::before { left: 20px; }
+    
+    .timeline-item, .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        padding: 20px 0 20px 50px;
+        text-align: left;
+    }
+
+    .timeline-item::after {
+        left: 12px !important;
+        right: auto !important;
+    }
 }

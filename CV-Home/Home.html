@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billy Andreas</title>
+    <title>Portfolio Web</title>
+    <!-- Menghubungkan ke file CSS eksternal -->
     <link rel="stylesheet" href="Home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#home" class="logo">Billy</a>
+                <!-- Kiri: Logo dihapus (kosong) -->
+                
+                <!-- Tengah: Menu Navigation (Pill) dengan Icon -->
                 <ul class="nav-links">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#pendidikan"><i class="fas fa-graduation-cap"></i> Pendidikan</a></li>
                     <li><a href="#keahlian"><i class="fas fa-code"></i> Keahlian</a></li>
                     <li><a href="#project"><i class="fas fa-folder-open"></i> Project</a></li>
                     <li><a href="#sertifikat"><i class="fas fa-certificate"></i> Sertifikat</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+
+                <!-- Kanan: Tombol & Burger Menu -->
+                <div class="nav-right">
+                    <a href="#contact" class="btn-action">Hubungi</a>
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -34,13 +42,13 @@
         <section id="home" class="hero-section">
             <div class="container content">
                 <div class="hero-text">
-                    <h1>Halo, saya <span class="name"> Billy Andreas</span></h1>
+                    <h1>Halo, Selamat Datang di <span class="name">Portfolio Saya</span></h1>
                     <p class="tagline">Seorang mahasiswa yang bersemangat dalam dunia pengembangan perangkat lunak dan teknologi web.</p>
                     <p>Saya suka mempelajari hal-hal baru, terutama di bidang web development, database system, software engineering, dan quality assurance (QA). Saya memiliki minat untuk mengembangkan aplikasi yang efisien, fungsional, dan mudah digunakan, serta terus meningkatkan keterampilan teknis saya melalui pembelajaran dan praktik langsung.</p>
-                    <a href="https://drive.google.com/file/d/11WSWCpp3SOnyBQEMQR_DvbSeyYVlo8tJ/view?usp=sharing" class="btn-primary" target="_blank">Liat Cv</a>
+                    <a href="https://drive.google.com/file/d/11WSWCpp3SOnyBQEMQR_DvbSeyYVlo8tJ/view?usp=sharing" class="btn-primary" target="_blank">Lihat CV</a>
                 </div>
                 <div class="hero-image">
-                    <img src="../CV-Home/image/FOTO BILLY.jpg" alt="Foto Profil Anda">
+                    <img src="../CV-Home/image/FOTO BILLY.jpg" alt="Foto Profil">
                 </div>
             </div>
         </section>
@@ -73,7 +81,7 @@
                                 <i class="fas fa-book"></i> IPA/SMA (Ilmu Pengetahuan Alam)
                             </p>
                             <p class="description">
-                                Pada masa SMA, saya aktif dalam organisasi seperti rohkris. Dan saya masuk eligible 28 dari satu sekolah
+                                Pada masa SMA, saya aktif dalam organisasi seperti rohkris. Dan saya masuk eligible 28 dari satu sekolah.
                             </p>
                         </div>
                     </article>
@@ -92,7 +100,6 @@
                             <li>HTML5</li>
                             <li>CSS3</li>
                             <li>C++</li>
-                            <li></li>
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -124,51 +131,52 @@
                         <div class="project-image-wrapper">
                             <img src="../CV-Home/image/Porto_KEL10_Rancar_IlkomB.jpg" alt="Project 1">
                             <div class="project-overlay">
-                                <a href="[Link ke Proyek 1 Anda]" target="_blank" class="view-btn">View Project</a>
+                                <a href="[Link ke Proyek 1 Anda]" target="_blank" class="view-btn btn-primary" style="padding: 8px 20px; border-width: 1px;">View Project</a>
                             </div>
                             <span class="project-badge">Role: FrontEnd</span>
                         </div>
                         <div class="project-info">
-                            <h3>Membuat Aplikasi</h3>
-                            <p>Proyek ini dibuat untuk project tugas akhir di mata kuliah saya</p>
+                            <h3 style="color: var(--text-color-light); margin: 15px 15px 5px;">Membuat Aplikasi</h3>
+                            <p style="margin: 0 15px 20px;">Proyek ini dibuat untuk project tugas akhir di mata kuliah saya</p>
                         </div>
                     </div>
                     <div class="modern-project-card">
                         <div class="project-image-wrapper">
                             <img src="../CV-Home/image/disavoved.jpeg" alt="Project 3">
                             <div class="project-overlay">
-                                <a href="https://vntrydev.itch.io/disavowed" target="_blank" class="view-btn">View Project</a>
+                                <a href="https://vntrydev.itch.io/disavowed" target="_blank" class="view-btn btn-primary" style="padding: 8px 20px; border-width: 1px;">View Project</a>
                             </div>
                             <span class="project-badge">Sound and Assets</span>
                         </div>
                         <div class="project-info">
-                            <h3>Membuat Game </h3>
-                            <p>Membantu membuat game, role saya mencari backsound dan ambience yang sesuai dengan kondisi didalam game</p>
+                            <h3 style="color: var(--text-color-light); margin: 15px 15px 5px;">Membuat Game</h3>
+                            <p style="margin: 0 15px 20px;">Membantu membuat game, role saya mencari backsound dan ambience yang sesuai dengan kondisi didalam game</p>
                         </div>
                     </div>
                     <div class="modern-project-card">
                         <div class="project-image-wrapper">
                             <img src="../CV-Home/image/bmi.jpg" alt="Project 2">
                             <div class="project-overlay">
-                                <a href="https://big-com18.github.io/BMI-project/index.html" target="_blank" class="view-btn">View Project</a>
+                                <a href="https://big-com18.github.io/BMI-project/index.html" target="_blank" class="view-btn btn-primary" style="padding: 8px 20px; border-width: 1px;">View Project</a>
                             </div>
                             <span class="project-badge">Fullstack</span>
                         </div>
                         <div class="project-info">
-                            <h3>Membuat website BMI </h3>
-                            <p> Dalam salah satu kursus yang saya ikuti untuk memperluas pengetahuan, saya diminta membuat sebuah website sederhana sebagai proyek akhir. </p>
+                            <h3 style="color: var(--text-color-light); margin: 15px 15px 5px;">Membuat website BMI</h3>
+                            <p style="margin: 0 15px 20px;">Dalam salah satu kursus yang saya ikuti untuk memperluas pengetahuan, saya diminta membuat sebuah website sederhana sebagai proyek akhir.</p>
                         </div>
                     </div>
                     <div class="modern-project-card">
                         <div class="project-image-wrapper">
-                            <img src="../CV-Home/image/Typographic logo design. The main text reads _BotWA_ in a bold, modern, sans-serif font. The letter 'O' in 'Bot' is replaced by a minimalist stylized robot head icon. Below it, a smaller text reads _ADMIN CONTROL_ .jpg" alt="Project 2">
+                            <img src="../CV-Home/image/Typographic logo design. The main text reads _BotWA_ in a bold, modern, sans-serif font. The letter 'O' in 'Bot' is replaced by a minimalist stylized robot head icon. Below it, a smaller text reads _ADMIN CONTROL_ .jpg" alt="Project 4">
                             <div class="project-overlay">
-                                <a href="https://big-com18.github.io/BMI-project/index.html" target="_blank" class="view-btn">View Project</a>
+                                <a href="https://big-com18.github.io/BMI-project/index.html" target="_blank" class="view-btn btn-primary" style="padding: 8px 20px; border-width: 1px;">View Project</a>
                             </div>
+                            <span class="project-badge">Node.js</span>
                         </div>
                         <div class="project-info">
-                            <h3>Bot WA Integrated System</h3>
-                            <p>Proyek pembuatan Bot WhatsApp berbasis Node.js (Baileys) dengan fitur integrasi panel admin untuk kontrol sistem dan manajemen pesan otomatis.</p>
+                            <h3 style="color: var(--text-color-light); margin: 15px 15px 5px;">Bot WA Integrated System</h3>
+                            <p style="margin: 0 15px 20px;">Proyek pembuatan Bot WhatsApp berbasis Node.js (Baileys) dengan fitur integrasi panel admin untuk kontrol sistem dan manajemen pesan otomatis.</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +212,7 @@
                     </div>
                     <div class="certificate-card">
                         <div class="certificate-image-wrapper">
-                            <img src="../CV-Home/image/Billy Andreas - Front End Developer.png" alt="Sertifikat 1">
+                            <img src="../CV-Home/image/Billy Andreas - Front End Developer.png" alt="Sertifikat 3">
                         </div>
                         <div class="certificate-info">
                             <h3>Front End Developer</h3>
@@ -215,10 +223,11 @@
                     </div>
                     <div class="certificate-card">
                         <div class="certificate-image-wrapper">
-                            <img src="../CV-Home/image/soon.jpg" alt="Sertifikat 3">
+                            <img src="../CV-Home/image/soon.jpg" alt="Sertifikat 4">
                         </div>
                         <div class="certificate-info">
                             <h3>Coming Soon</h3>
+                            <p>Sertifikat selanjutnya akan segera ditambahkan.</p>
                         </div>
                     </div>  
                 </div>
@@ -228,31 +237,31 @@
         <section id="contact" class="section dark-section">
             <div class="container contact-container">
                 <h2>Hubungi Saya</h2>
-                <p class="contact-subtitle">Klik salah satu untuk menghubungi saya:</p>
+                <p style="margin-bottom: 20px;">Klik salah satu untuk menghubungi saya:</p>
                 <div class="contact-grid">
                     <a href="mailto:billyandreas441@gmail.com" class="contact-card">
                         <div class="contact-img-wrapper">
                             <img src="../CV-Home/image/gmail.png" alt="Email">
                         </div>
-                        <span class="contact-label">Email</span>
+                        <span style="color: var(--text-color-light); font-weight: 500;">Email</span>
                     </a>
                     <a href="https://www.linkedin.com/in/bill-and/" target="_blank" class="contact-card">
                         <div class="contact-img-wrapper">
                             <img src="../CV-Home/image/linkedin.png" alt="LinkedIn">
                         </div>
-                        <span class="contact-label">LinkedIn</span>
+                        <span style="color: var(--text-color-light); font-weight: 500;">LinkedIn</span>
                     </a>
                     <a href="https://github.com/Big-com18" target="_blank" class="contact-card">
                         <div class="contact-img-wrapper">
                             <img src="../CV-Home/image/github.png" alt="GitHub">
                         </div>
-                        <span class="contact-label">GitHub</span>
+                        <span style="color: var(--text-color-light); font-weight: 500;">GitHub</span>
                     </a>
                     <a href="https://www.instagram.com/bill.and18/" target="_blank" class="contact-card">
                         <div class="contact-img-wrapper">
                             <img src="../CV-Home/image/instagram.png" alt="Instagram">
                         </div>
-                        <span class="contact-label">Instagram</span>
+                        <span style="color: var(--text-color-light); font-weight: 500;">Instagram</span>
                     </a>
                 </div>
             </div>
@@ -272,7 +281,7 @@
                     <span>JavaScript</span>
                 </a>
             </div>
-            <p class="footer-copy">&copy; 2024 Billy Andreas. All rights reserved.</p>
+            <p class="footer-copy">&copy; 2024 Portfolio Web. All rights reserved.</p>
         </div>
     </footer>
 
