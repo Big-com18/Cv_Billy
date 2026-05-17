@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postingan | Portfolio Billy</title>
+    <!-- Tetap hubungkan ke file CSS yang sama -->
+    <link rel="stylesheet" href="post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="../Home.html#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="../Home.html#pendidikan"><i class="fas fa-graduation-cap"></i> Pendidikan</a></li>
+                    <li><a href="../Home.html#keahlian"><i class="fas fa-code"></i> Keahlian</a></li>
+                    <li><a href="../Home.html#project"><i class="fas fa-folder-open"></i> Project</a></li>
+                    <li><a href="post.html" class="active"><i class="fas fa-newspaper"></i> Postingan</a></li>
+                    <li><a href="../Home.html#sertifikat"><i class="fas fa-certificate"></i> Sertifikat</a></li>
+                    <li><a href="../Home.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="Home.html#contact" class="btn-action">Hubungi</a>
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Tambahkan padding-top agar tidak tertutup navbar (tergantung styling fixed navbar kamu) -->
+        <section class="section" style="padding-top: 120px; min-height: 80vh;"> 
+            <div class="container">
+                <h2 style="margin-bottom: 30px;">Aktivitas & Pembaruan</h2>
+                
+                <div class="feed-grid" style="max-width: 700px; margin: 0 auto;"> <!-- Membatasi lebar agar mirip feed aslinya -->
+                    
+                    <!-- KOTAK POSTINGAN MULAI DARI SINI -->
+                    <div class="post-card">
+                        <div class="post-header">
+                            <img src="../CV-Home/image/FOTO BILLY.jpg" alt="Foto Profil" class="post-profile-pic">
+                            <div class="post-meta">
+                                <h4>Billy</h4>
+                                <p>Mahasiswa Ilmu Komputer | Frontend & Software Enthusiast</p>
+                                <span>Baru saja</span>
+                            </div>
+                        </div>
+                        
+                        <div class="post-body">
+                            <p>
+                                Akhirnya bisa membagikan sedikit sneak peek dari project aplikasi pelacakan transportasi umum Jakarta yang sedang saya kerjakan! 🚀 
+                                <br><br>
+                                Fitur integrasi peta dan pencarian rute ini cukup menantang, tapi sangat seru saat berhasil diimplementasikan. Geser gambar di bawah untuk melihat beberapa tampilan UI-nya! 👇 #Frontend #MobileDev #UIUX #Jakarta
+                            </p>
+                            
+                            <div class="image-slider-container">
+                                <div class="slider-wrapper">
+                                    <img src="../CV-Home/image/slide1.jpg" alt="Tampilan UI 1" class="slide-img">
+                                    <img src="../CV-Home/image/slide2.jpg" alt="Tampilan UI 2" class="slide-img">
+                                    <img src="../CV-Home/image/slide3.jpg" alt="Tampilan UI 3" class="slide-img">
+                                </div>
+                                <p class="swipe-hint"><i class="fas fa-arrows-alt-h"></i> Geser untuk melihat lebih banyak</p>
+                            </div>
+                        </div>
+                        
+                        <hr class="post-divider">
+                        
+                        <div class="post-actions">
+                            <button class="action-btn"><i class="far fa-thumbs-up"></i> Suka</button>
+                            <button class="action-btn"><i class="far fa-comment"></i> Komentar</button>
+                            <button class="action-btn"><i class="fas fa-share"></i> Bagikan</button>
+                        </div>
+                    </div>
+                    <!-- KOTAK POSTINGAN SELESAI -->
+
+                    <!-- Kamu bisa menambahkan <div class="post-card"> lainnya di sini -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container footer-container">
+            <p class="footer-tagline">"Coding with passion & precision."</p>
+            <div class="footer-socials">
+                <a href="#" target="_blank" aria-label="Html">
+                    <img src="/CV-Home/image/css.png" alt="Html">
+                    <span>Html</span>
+                </a>
+                <a href="#" target="_blank" aria-label="JavaScript">
+                    <img src="/CV-Home/image/javascript.jpg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </a>
+            </div>
+            <p class="footer-copy">&copy; 2024 Portfolio Web. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Home.js"></script>
+</body>
+</html>
